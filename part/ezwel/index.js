@@ -1,6 +1,9 @@
-$('.slider-1').slick({
+function BackgroundSlider__init() {
+  $('.slide-box > .slide-k > .slides').slick({
     dots:true,
-    customPaging: function(slide, i) {
-      return i;
-    }
+    arrows: true,
+    autoplay : true,
+    autoplaySpeed : 1500
   });
+}
+BackgroundSlider__init();
