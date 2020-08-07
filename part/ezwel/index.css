@@ -326,81 +326,124 @@ label[for] {
 }
 /*top-bar start*/
 .top-bar {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  position: fixed;
-  padding-left: 50px;
-  padding-right: 50px;
-  box-sizing: border-box;
-  color: white;
-  transition: background-color 0.5s, color 0.5s;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    height: 90px;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
-.top-bar:hover {
-  background-color: white;
-  color: black;
-}
-/*top-bar end*/
 
-/*menu-box-1 start*/
-.top-bar .menu-box-1 ul > li:hover > a {
-  color: #295ebe;
+.top-bar > .logo-box {
+    left: 80px;
+    width: 134px;
+    height: 35px;
+    overflow: hidden;
+    padding-top: 27px;
+    margin: 0 80px;
 }
-.top-bar > .menu-box-1 ul > li > a {
-  cursor: pointer;
+.top-bar > .logo-box > a {
+    background-image: url(https://sung-kyung.github.io/img1/pf/ezwel/logo.png);
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 27px;
+}
+.top-bar:hover > .logo-box > a {
+    background-position-y: -45px;
+}
+.top-bar > .menu-box-1 {
+    margin-left: 150px;
+}
+.top-bar > .menu-box-1 > ul {
+    padding: 31px 0;
+}
+.top-bar > .menu-box-1 > ul > li {
+    position: relative;
+    padding: 0 70px;
 }
 .top-bar > .menu-box-1 > ul > li > a {
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 0 40px;
-  position: relative;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    padding: 30px 0;
 }
-.top-bar .menu-box-1 > ul > li > ul {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.1s, visibility 0.1s;
-  justify-content: center;
-  padding: 30px 0;
-  margin-top: 1px;
-  overflow: hidden;
+.top-bar > .menu-box-1 > ul > li > a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    top: 100%;
+    left: 50%;
+    background-color: #295ebe;
+    transform: translateX(-50%);
+    transition: width 0.5s;
+}
+.top-bar > .menu-box-1 > ul > li:hover > a::after {
+    width: 100%;
+}
+.top-bar > .menu-box-1 > ul > li > a {
+    color: #000;
+    padding: 30px 0;
+}
+.top-bar:hover > .menu-box-1 > ul > li > a {
+    color: #000;
+    padding: 30px 0;
+}
+.top-bar > .menu-box-1 > ul > li:hover > a {
+    color: #295ebe;
+}
+.top-bar > .menu-box-1 ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 51;
+}
+.top-bar > .menu-box-1 ul.active > li > ul {
+    display: block;
+}
+.top-bar > .menu-box-1 ul ul > li {
+    text-align: center;
+}
+.top-bar > .menu-box-1 ul ul > li:first-child {
+    margin-top: 25px;
+}
+.top-bar > .menu-box-1 ul ul > li > a {
+    display: block;
+    padding: 10px 0;
+    color: #000;
+    font-weight: 500;
+}
+.top-bar > .menu-box-1 ul ul > li:hover > a {
+    color: #295ebe;
+}
+.top-bar > .menu-box-1 > .bg-box {
+    height: 0;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
+.top-bar > .menu-box-1 > .bg-box.active {
+    height: 345px;
 }
 
-.top-bar .menu-box-1 > ul > li > ul > li > a {
-  font-size: 1.1rem;
-  word-break: keep-all;
+.top-bar > .menu-box-1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #dfdfdf;
+    display: block;
 }
-.top-bar .menu-box-1 > ul ul > li > a {
-  display: block;
-  padding: 30px;
-}
-
-.top-bar .menu-box-1 ul:hover > li > ul {
-  opacity: 1;
-  visibility: visible;
-}
-.top-bar .menu-box-1 > ul ul::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 91px;
-  width: 100%;
-  height: 500px;
-  background-color: rgba(255,255,255,0.2);
-  display: none;
-  z-index: -1;
-  
-}
-.top-bar .menu-box-1 > ul:hover ul::after {
-  display: block;
-}
-.top-bar .menu-box-1 > ul ul {
-  z-index: 10;
-}
-/*menu-box-1 end*/
-
+/*top-bar end*/
 /*background-page start*/
 .slide-box {
     width: 100%;
