@@ -1,0 +1,101 @@
+사이트추천
+
+
+
+
+1 핀터레스트 (레이아웃 디자인이나 필요한 자료들)
+     https://www.pinterest.co.kr/
+
+
+2 지디웹 (기업형 레이아웃이나 여러가지 레이아웃 디자인)
+     http://www.gdweb.co.kr/main/
+
+
+3 폰트어썸 (아이콘)
+     https://fontawesome.com/
+
+
+4  디비컷 (기업형레이아웃이나 여러가지 레이아웃 디자인)
+     https://www.dbcut.com/bbs/index.php
+
+
+5  플랫아이콘 (아이콘)
+     https://www.flaticon.com/
+
+
+6  프리픽 (무료 png, ai 등)
+     https://www.freepik.com
+
+
+7 노트폴리오  (디자인, uiux,ai,포트폴리오 등 )
+     https://notefolio.net/  
+
+
+8 드리블  (디자인, ai, animation등 )
+     https://dribbble.com/ 
+
+
+9 html드라이브  (jquery, html, css 참고사이트)
+     http://www.htmldrive.net/ 
+
+
+10 fixden 
+     http://www.pixeden.com/
+
+
+11 목업월드  (목업사이트)
+     https://www.mockupworld.co
+
+
+12 FDR (font, 그래픽, 목업, 템플렛)  -07.24 web1
+     https://freedesignresources.net/
+
+
+13 목업
+     https://mockup.photos/freebies?filter=any,free,any,newest,any&page=2
+
+
+14 good목업
+     https://goodmockups.com/
+
+
+15 픽사베이 (무료이미지, ai, png, design, 템플릿)
+     https://pixabay.com/ko/
+
+
+16 png이미지 (png)
+     http://pngimg.com/
+
+
+17 소스트리  (아이콘, 그래픽, 이미지, ui)
+     http://sourcetree.kr/
+
+
+18 구글폰트
+     https://fonts.google.com/
+
+
+19 소스링크 (폰트, 이미지, 아이콘, ai, psd, 로고, 텍스쳐, ui 등) 
+     https://sourcelink.co.kr/
+
+
+20 웹쟁이 (템플렛)
+     http://webjangi.com/design/freetemplate
+
+
+21 colourlovers (컬러 팔레트)
+      https://www.colourlovers.com/
+
+
+22 colormunki (컬러팔레트)
+      http://www.colormunki.com/pantone?class=palette_page_nav_link
+
+
+23 awards (웹디자인)
+      https://thefwa.com/awards/page/1/
+
+
+24 Git 지아이티(홈페이지제작)
+      http://www.g-it.kr/bbs/board.php?bo_table=site_design
+
+
