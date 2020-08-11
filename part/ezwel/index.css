@@ -326,201 +326,250 @@ label[for] {
 }
 /*top-bar start*/
 .top-bar {
-    height: 90px;
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+  height: 90px;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 html:not([data-fullpage-index="0"]) .top-bar,
 .top-bar:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .top-bar > .logo-box {
-    left: 80px;
-    width: 134px;
-    height: 35px;
-    overflow: hidden;
-    padding-top: 27px;
-    margin: 0 80px;
+  left: 80px;
+  width: 134px;
+  height: 35px;
+  overflow: hidden;
+  padding-top: 27px;
+  margin: 0 80px;
 }
 .top-bar > .logo-box > a {
-    background-image: url(https://sung-kyung.github.io/img1/pf/ezwel/logo.png);
-    width: 100%;
-    height: 100%;
-    display: block;
-    top: 27px;
+  background-image: url(https://sung-kyung.github.io/img1/pf/ezwel/logo.png);
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 27px;
 }
 html:not([data-fullpage-index="0"]) .top-bar > .logo-box > a,
 .top-bar:hover > .logo-box > a {
-    background-position-y: -45px;
+  background-position-y: -45px;
 }
 .top-bar > .menu-box-1 {
-    margin-left: 150px;
+  margin-left: 150px;
 }
 .top-bar > .menu-box-1 > ul {
-    padding: 31px 0;
+  padding: 31px 0;
 }
 .top-bar > .menu-box-1 > ul > li {
-    position: relative;
-    padding: 0 70px;
+  position: relative;
+  padding: 0 70px;
 }
 .top-bar > .menu-box-1 > ul > li > a {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    position: relative;
-    padding: 30px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  padding: 30px 0;
 }
 .top-bar > .menu-box-1 > ul > li > a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    top: 100%;
-    left: 50%;
-    background-color: #295ebe;
-    transform: translateX(-50%);
-    transition: width 0.5s;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  top: 100%;
+  left: 50%;
+  background-color: #295ebe;
+  transform: translateX(-50%);
+  transition: width 0.5s;
 }
 .top-bar > .menu-box-1 > ul > li:hover > a::after {
-    width: 100%;
+  width: 100%;
 }
 .top-bar > .menu-box-1 > ul > li > a {
-    color: #000;
-    padding: 30px 0;
+  color: #000;
+  padding: 30px 0;
 }
 html:not([data-fullpage-index="0"]) .top-bar > .menu-box-1 > ul > li > a,
 .top-bar:hover > .menu-box-1 > ul > li > a {
-    color: #000;
-    padding: 30px 0;
+  color: #000;
+  padding: 30px 0;
 }
 .top-bar > .menu-box-1 > ul > li:hover > a {
-    color: #295ebe;
+  color: #295ebe;
 }
 .top-bar > .menu-box-1 ul ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    display: none;
-    z-index: 51;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+  z-index: 51;
 }
 .top-bar > .menu-box-1 ul.active > li > ul {
-    display: block;
+  display: block;
 }
 .top-bar > .menu-box-1 ul ul > li {
-    text-align: center;
+  text-align: center;
 }
 .top-bar > .menu-box-1 ul ul > li:first-child {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 .top-bar > .menu-box-1 ul ul > li > a {
-    display: block;
-    padding: 10px 0;
-    color: #000;
-    font-weight: 500;
+  display: block;
+  padding: 10px 0;
+  color: #000;
+  font-weight: 500;
 }
 .top-bar > .menu-box-1 ul ul > li:hover > a {
-    color: #295ebe;
+  color: #295ebe;
 }
 .top-bar > .menu-box-1 > .bg-box {
-    height: 0;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -3;
+  height: 0;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -3;
 }
 .top-bar > .menu-box-1 > .bg-box.active {
-    height: 345px;
+  height: 345px;
 }
 
 .top-bar > .menu-box-1::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #dfdfdf;
-    display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #dfdfdf;
+  display: block;
 }
 /*top-bar end*/
 /*background-page start*/
 .slide-box {
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: relative;
-    z-index: -1;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: relative;
+  z-index: -1;
 }
 .slider-k {
-    position: absolute;
-    user-select: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -3;
-    display: block;
+  position: absolute;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  display: block;
 }
 .slider-k > .slides {
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
 }
 .slider-k > .slides > div {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 .slider-k > .slides > div > .bg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    transition: transform 3s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: transform 3s;
 }
 
 .slider-k > .slides > div.active > .bg {
-    transition: transform 3s;
-    transform: scale(1.1);
+  transition: transform 3s;
+  transform: scale(1.1);
 }
 
+.slider-k .slides > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
+.slider-k .slides > div.active {
+  visibility: visible;
+  opacity: 1;
+}
 
-
+.slider-k > .slides > div > .text-info {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  color: white;
+}
+.slider-k > .slides > div > .text-info > .title {
+  font-size: 60px;
+  line-height: 82px;
+  font-weight: 300;
+  letter-spacing: 0.015em;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+.slider-k > .slides > div.active > .text-info > .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slider-k > .slides > div > .text-info > .text {
+  font-size: 60px;
+  line-height: 82px;
+  font-weight: 800;
+  margin-top: -60px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 1s 0.2s ease-in-out, opacity 0.5s 0.2s ease-in-out;
+}
+.slider-k > .slides > div.active > .text-info > .text {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .about-bg {
-    background-image: url(https://sung-kyung.github.io/img1/pf/ezwel/about-bg.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 50%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    z-index: -1;
+  background-image: url(https://sung-kyung.github.io/img1/pf/ezwel/about-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
 }
 .about-ezwel {
-    width: 100%;
-    height: 100vh;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
 /*background-page end*/
