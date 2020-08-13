@@ -682,4 +682,39 @@ html:not([data-fullpage-index="0"]) .top-bar > .menu-box-1 > ul > li > a,
 }
 /*2nd page end*/
 
+/*3rd page start*/
+.support-ezwel {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.con-box {
+    max-width: 1280px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.support-ezwel .guide-box {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+.support-ezwel .guide-box > .support-ezwel-title {
+    display: inline-block;
+    color: #000;
+    padding-top: 120px;
+    position: absolute;
+    font-size: 50px;
+    line-height: 82px;
+    font-weight: 800;
+}
+
+.support-ezwel .guide-box > .support-ezwel-title > span {
+    color: #dfdfdf;
+    margin-bottom: 12px;
+    font-size: 30px;
+    line-height: 1;
+}
+/*3rd page end*/
+
 /*background-page end*/
