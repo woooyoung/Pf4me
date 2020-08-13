@@ -635,23 +635,51 @@ html:not([data-fullpage-index="0"]) .top-bar > .menu-box-1 > ul > li > a,
   opacity: 1;
   transform: translateY(0);
 }
-
+/*2nd page*/
 .about-bg {
-  background-image: url(http://img.ezwelfare.net/welfare_corp/css/user/front/pc/images/main/about-bg.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 50%;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
+    background-image: url(http://img.ezwelfare.net/welfare_corp/css/user/front/pc/images/main/about-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
 }
 .about-ezwel {
-  width: 100%;
-  height: 100vh;
-  position: relative;
+    width: 100%;
+    height: 100vh;
+    position: relative;
 }
+.con-box {
+    max-width: 1280px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-ezwel .info-box {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+.about-ezwel .info-box > .about-ezwel-title {
+    display: inline-block;
+    color: #000;
+    padding-top: 120px;
+    position: absolute;
+    font-size: 50px;
+    line-height: 82px;
+    font-weight: 800;
+}
+
+.about-ezwel .info-box > .about-ezwel-title > span {
+    color: #dfdfdf;
+    margin-bottom: 12px;
+    font-size: 30px;
+    line-height: 1;
+}
+/*2nd page end*/
 
 /*background-page end*/
