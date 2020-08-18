@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+    <script src="custom.js"></script>
+    <title>Document</title>
+    <style>
+        .wrap {
+            position: relative;
+        }
+        .contents {
+            width: 1240px;
+            margin: 0 auto;
+            height: 3000px;
+            border: 1px solid #000;
+        }
+
+        .top {
+            text-decoration:none;
+            display: block;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 2px solid blue;
+            color: blue;
+            font-weight: bold;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .top:hover {
+            background:blue;
+            color:#fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="contents"></div>
+        <a class="top" href="#">top</a>
+    </div>
+</body>
+
+</html>
