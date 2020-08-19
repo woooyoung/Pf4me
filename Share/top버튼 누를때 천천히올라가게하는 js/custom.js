@@ -9,6 +9,6 @@ $(document).ready(function(){
 
         var wrap = $(".wrap");
         var active = wrap.offset().top;
-        $("html, body").animate({scrollTop:active},10000);
+        $("html, body").animate({scrollTop:active},1000);
     });
 });

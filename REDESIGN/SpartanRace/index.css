@@ -322,6 +322,8 @@ label[for] {
   flex:1 0 0;
 }
 
+
+/* top-bar start*/
 .top-bar {
   top:0;
   left:0;
@@ -335,6 +337,7 @@ label[for] {
   transition:background-color .5s;
   color:white;
   border-bottom:1px solid rgba(255,255,255,0.4);
+  z-index:2;
 }
 
 .top-bar .logo > img {
@@ -352,9 +355,51 @@ label[for] {
   cursor:pointer;
 }
 
-.top-bar .lang > a {
-  font-size:0.8rem;
-  padding:0 35px;
-  transition:color 0.5s;
+.top-bar .find-race > a > button {
+  font-size:1.1rem;
+  padding:0 20px;
   position:relative;
+  cursor:pointer;
+  background-color:#cc092f;
+  border-radius:5px;
+  border: 1px solid transparent;
 }
+/* top-bar end*/
+
+/* full-page */
+#fullpage > .section > div {
+ margin-top:100px;
+}
+#fullpage > .section {
+  margin-top:100px;
+}
+.page-1 {
+  background-image:url(https://d19tiqumqauva7.cloudfront.net/var/andorra/storage/images/_aliases/intro_slide/www.andorra.ad/multimedia/galeria/agenda/agenda_fitxes/esports-estiu/spartan-race-andorra-encamp/1906x960_spartan_race_andorra_encamp_2020/27712626-1-cat-ES/1906x960_spartan_race_andorra_encamp_2020.jpg);
+  height:100vh;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  opacity:.7;  
+  z-index:-1;
+}
+
+.page-2 {
+  background-image:url(https://www.visitlaie.com/wp-content/uploads/2018/04/KualoaSpartanRace.jpg);
+  height:100vh;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  opacity:.7;  
+  z-index:-1;
+}
+
+.page-3 {
+  background-image:url(https://www.gosnowmass.com/wp-content/uploads/2019/03/050518_FT_Carson_HR_KS_249.jpg);
+  height:100vh;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  opacity:.7;  
+  z-index:-1;
+}
+

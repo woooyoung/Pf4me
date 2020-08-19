@@ -1,0 +1,44 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.after::after {
+    display:block;
+    content:"";
+    clear:both;
+}
+body {
+    background:#000;
+}
+.box {
+    width:400px;
+    height:400px;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border:4px solid transparent;
+    border-image: linear-gradient(45deg, #ff0, #f0f, #f00, #00f, #0f0);
+    border-image-slice: 1;
+    
+}
+
+.box:hover {
+    border-image:linear-gradient(45deg, #0f0, #00f, #f00, #f0f, #ff0 );
+    border-image-slice: 1;
+}
+
+@keyframes {
+    0% (linearGradient )
+}

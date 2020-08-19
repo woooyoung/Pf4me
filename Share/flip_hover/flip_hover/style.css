@@ -1,0 +1,43 @@
+.flip-container {
+    perspective: 1000px;
+    border: 2px solid rgba(0, 0, 0, 0) !important;
+}
+
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background: url('http://opengameart.org/sites/default/files/styles/medium/public/king_of_hearts2.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: url('http://opengameart.org/sites/default/files/styles/medium/public/card%20back%20purple.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+    width: 300px;
+    height: 500px;
+}
+
+.flipper {
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+}
+
+.front,
+.back {
+    position: absolute;
+    backface-visibility: hidden;
+}
