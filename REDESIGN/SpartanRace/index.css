@@ -374,27 +374,33 @@ label[for] {
   margin-top:100px;
 }
 .page-1 {
-  background-image:url(https://d19tiqumqauva7.cloudfront.net/var/andorra/storage/images/_aliases/intro_slide/www.andorra.ad/multimedia/galeria/agenda/agenda_fitxes/esports-estiu/spartan-race-andorra-encamp/1906x960_spartan_race_andorra_encamp_2020/27712626-1-cat-ES/1906x960_spartan_race_andorra_encamp_2020.jpg);
-  height:100vh;
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
-  opacity:.7;  
-  z-index:-1;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
-}
-
-.page-2 {
   background-image:url(https://www.visitlaie.com/wp-content/uploads/2018/04/KualoaSpartanRace.jpg);
   height:100vh;
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
-  opacity:.7;  
+  opacity:.6;  
+  z-index:-1;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  -webkit-filter: grayscale(100%);
+  display:block;
+  width:100%;
+}
+
+.page-2 {
+  background-image:url(https://s3-ap-southeast-1.amazonaws.com/v7-ap-uploads-sp/wp-content/uploads/sites/14/2014/12/31093444/IMG_5457-1-1024x341.jpg);
+  height:100vh;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  opacity:.6;  
   z-index:-1;
    filter: blur(1px);
   -webkit-filter: blur(1px);
+  -webkit-filter: grayscale(100%);
+  display:block;
+  width:100%;
 }
 
 .page-3 {
@@ -403,11 +409,19 @@ label[for] {
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
-  opacity:.7;  
+  opacity:.6;  
   z-index:-1;
    filter: blur(1px);
   -webkit-filter: blur(1px);
+  -webkit-filter: grayscale(100%);
   margin-top:0;
+  display:block;
+  width:100%;
+}
+
+#fullpage > .section > .page-1 > a {
+  position:block;
+  font-size:5rem;
 }
 
 /*
