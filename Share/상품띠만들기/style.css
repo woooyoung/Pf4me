@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {list-style: none;}
+
+
+body {
+    padding: 50px;
+}
+
+.list li {
+    width: 26%;
+    position: relative;
+}
+
+.list a {
+    text-decoration: none;
+    display: block;
+    border: 1px solid #ccc;
+    color: gray;
+}
+
+.list img {
+    width: 50%;
+}
+
+.list h2 {
+    padding: 5px;
+}
+
+.list p{
+    padding: 0 5px 5px;
+}
+
+.list .mark {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+}
+
+.list .mark div {
+    width: 100px;
+    background: skyblue;
+    text-align: center;
+    transform: rotate(-45deg) translate(-29px, -5px);
+    font-size: 14px;
+}
+
+.list .mark::before {
+    content: "";
+    border-color: transparent cadetblue transparent transparent;
+    border-width: 7px;
+    border-style: solid;
+    position: absolute;
+    top: 57px;
+    left: -8px;
+}
+
+.list .mark::after {
+    content: "";
+    border-color: transparent transparent cadetblue transparent;
+    border-width: 6px;
+    border-style: solid;
+    position: absolute;
+    top: -6px;
+    left: 59px;
+}
+
+
