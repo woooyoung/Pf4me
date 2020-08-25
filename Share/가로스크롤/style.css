@@ -1,0 +1,50 @@
+html,
+body {
+	height: 100%;
+	padding: 0;
+	overflow: hidden;
+}
+
+html.prevent-history,
+html.prevent-history body {
+	overscroll-behavior: contain;
+}
+
+.scroll-wrapper {
+	overflow: hidden;
+}
+
+ul {
+	display: block;
+	white-space: nowrap;
+	height: 300px;
+	overflow: visible;
+	padding: 0;
+	font-size: 0;
+	transform: translateX(0px);
+}
+
+li {
+	box-sizing: border-box;
+	height: 300px;
+	width: 300px;
+	display: inline-block;
+	border: 1px solid;
+	margin-right: 5px;
+}
+
+li:nth-child(4n) {
+	background: #ddd;
+}
+
+li:nth-child(4n + 1) {
+	background: #555;
+}
+
+li:nth-child(4n + 2) {
+	background: #777;
+}
+
+li:nth-child(4n + 3) {
+	background: #e1e1e1;
+}
