@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style>
+a.rechan-a {
+	background-color: pink;
+	box-shadow: inset 0 0 0 4px deeppink;
+	/* outline으로 교체 할 수 있습니다.
+	outline: 4px solid blue;
+	outline-offset: -4px;
+	*/
+	color: deeppink;
+	display: inline-block;
+	font: 400 4em/1 'Raleway', sans-serif;
+	padding: 1em;
+	position: relative;
+	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+a.rechan-a:hover {
+	background-color: lightcyan; /* :hover 상태일 때 background-color 색 */
+	color: deepskyblue; /* :hover 상태일 때 color 색 */
+}
+a.rechan-a svg.rechan-svg {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+a.rechan-a svg.rechan-svg rect.rechan-rect {
+	fill: none;
+	stroke: deepskyblue; /* :hover 상태일 때 stroke 색 */
+	stroke-dasharray: 400%;
+	stroke-dashoffset: 400%;
+	stroke-width: 8; /* box-shadow-spread의 2배를 입력하세요 또는 outline-width의 2배를 입력하세요 */
+	transition: stroke-dashoffset 0.5s ease-in-out;
+}
+a.rechan-a:hover svg.rechan-svg rect.rechan-rect {
+	stroke-dashoffset: 0;
+}
+</style>
+</head>
+
+<body>
+	
+	<a class="rechan-a">
+		button
+		<svg class="rechan-svg" height="100%" xmlns="http://www.w3.org/2000/svg" width="100%">
+			<rect class="rechan-rect" height="100%" width="100%" x="0" y="0"/>
+		</svg>
+	</a>
+</body>
+</html>

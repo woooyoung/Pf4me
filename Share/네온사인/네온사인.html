@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>네온사인</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway:900i" rel="stylesheet">
+<style>
+	body {
+		background-color: #000;
+		margin: 0;
+		overflow: hidden;
+		position: relative;
+	}
+
+	body::before {
+		content: '';
+		display: block;
+		filter: blur(1rem);
+		height: 100vh;
+		left: 0;
+		opacity: .1;
+		position: absolute;
+		top: 0;
+		width: 100vw;
+		z-index: -1;
+	}
+
+	.description {
+		color: #FFF;
+		font-size: 4rem;
+		text-align: center;
+	}
+
+	.royalblue {
+		animation: royalblue 1.6s ease-in-out infinite alternate;
+		color: #FFF;
+		font-family: 'Raleway', sans-serif;
+		font-size: calc(4rem + 4vw);
+		font-style: italic;
+		font-weight: 900;
+		padding-top: 4rem;
+		text-align: center;
+		transition: color .8s;
+	}
+
+	.royalblue:hover {
+		animation: royalblue-out .4s ease-in-out;
+		color: #4169E1;
+	}
+
+	@keyframes royalblue {
+		from {
+			text-shadow: 0 0 .4rem #FFF, 0 0 .8rem #FFF, 0 0 1.6rem #FFF, 0 0 3.2rem #FFF, 0 0 4rem #4169E1, 0 0 5rem #4169E1, 0 0 6rem #4169E1, 0 0 7rem #4169E1;
+		}
+		to {
+			text-shadow: 0 0 .2rem #FFF, 0 0 .4rem #FFF, 0 0 .8rem #FFF, 0 0 1.6rem #FFF, 0 0 2rem #4169E1, 0 0 2.5rem #4169E1, 0 0 3rem #4169E1, 0 0 3.5rem #4169E1;
+		}
+	}
+	
+	@keyframes royalblue-out {
+		from {
+			text-shadow: 0 0 .2rem #4169E1, 0 0 .4rem #4169E1, 0 0 .8rem #4169E1, 0 0 1.6rem #4169E1, 0 0 2rem #4169E1, 0 0 2.5rem #4169E1, 0 0 3rem #4169E1, 0 0 3.5rem #4169E1;
+		}
+	}
+</style>
+</head>
+
+<body>
+<div class="royalblue">royalblue</div>
+<div class="description">로열블루</div>
+</body>
+</html>
