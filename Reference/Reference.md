@@ -1462,3 +1462,472 @@ function count($node) {
 }
 // 커스텀 끝
 ```
+
+### PUBG-FEATURED NEWS 
+```html
+<!-- 유용한 링크 -->
+<!-- cdnsj : https://cdnjs.com/ -->
+<!-- 폰트어썸 아이콘 리스트 : https://fontawesome.com/icons?d=gallery&m=free -->
+
+<!-- 구글 폰트 불러오기 -->
+<!-- rotobo(400/700/900), notosanskr(400/600/900) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="box-1 con">
+    <ul class="flex flex-jc-sb">
+        <li>
+            <a href="#" class="block relative">
+                <div class="abs-full flex flex-column-nowrap">
+                    <div class="img-box" style="background-image:url(https://tjswjd2990.github.io/img1/pf/PUBG/meet_the_champions_featured-750x422.jpg);"></div>
+                    <div class="txt-box flex-grow-1">
+                        텍스트
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="block relative">
+                <div class="abs-full flex flex-column-nowrap">
+                    <div class="img-box" style="background-image:url(https://tjswjd2990.github.io/img1/pf/PUBG/final-recap-1.png);"></div>
+                    <div class="txt-box flex-grow-1">
+                        텍스트
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="block relative">
+                <div class="abs-full flex flex-column-nowrap">
+                    <div class="img-box" style="background-image:url(https://tjswjd2990.github.io/img1/pf/PUBG/200706_08.png);"></div>
+                    <div class="txt-box flex-grow-1">
+                        텍스트
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+```
+```css
+html {
+    /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+/* 노말라이즈 */
+body, ul, li, h1 {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+label[for] {
+    cursor:pointer;
+    user-select:none;
+}
+
+/* 라이브러리 */
+.block {
+    display:block;
+}
+
+.inline-block {
+    display:inline-block;
+}
+
+.absolute-left {
+    position:absolute;
+    left:0;
+}
+
+.absolute-right {
+    position:absolute;
+    right:0;
+}
+
+.absolute-bottom {
+    position:absolute;
+    bottom:0;
+}
+
+.absolute-top {
+    position:absolute;
+    top:0;
+}
+
+.absolute-center {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.absolute-middle {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.absolute-middle.absolute-center {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+}
+
+.abs-full {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.relative {
+    position:relative;
+}
+
+.cell {
+    float:left;
+    box-sizing:border-box;
+}
+
+.cell-right {
+    float:right;
+    box-sizing:border-box;
+}
+
+.row::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.clear-both {
+    clear:both;
+}
+
+.img-box > img {
+    width:100%;
+    display:block;
+}
+
+.con {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.margin-0-auto {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.text-align-center {
+    text-align:center;
+}
+
+.text-align-right {
+    text-align:right;
+}
+
+.line-height-0 {
+    line-height:0;
+}
+
+.line-height-0 > * {
+    line-height:normal;
+}
+
+.width-30px {
+    width:30px;
+}
+
+.width-35px {
+    width:35px;
+}
+
+.width-40px {
+    width:35px;
+}
+
+.width-45px {
+    width:35px;
+}
+
+.width-50px {
+    width:50px;
+}
+
+.width-80px {
+    width:80px;
+}
+
+.width-100px {
+    width:100px;
+}
+
+.width-100p {
+    width:100%;
+}
+
+.width-60p {
+    width:60%;
+}
+
+.width-55p {
+    width:55%;
+}
+
+.width-50p {
+    width:50%;
+}
+
+.width-45p {
+    width:45%;
+}
+
+.width-40p {
+    width:40%;
+}
+
+.width-30p {
+    width:30%;
+}
+
+.width-35p {
+    width:35%;
+}
+
+.width-100p-except-30px {
+    width:calc(100% - 30px);
+}
+
+.width-100p-except-35px {
+    width:calc(100% - 35px);
+}
+
+.width-100p-except-40px {
+    width:calc(100% - 40px);
+}
+
+.width-100p-except-50px {
+    width:calc(100% - 50px);
+}
+
+.width-100p-except-80px {
+    width:calc(100% - 80px);
+}
+
+.width-100p-except-100px {
+    width:calc(100% - 100px);
+}
+
+.height-100p {
+    height:100%;
+}
+
+.height-50p {
+    height:50%;
+}
+
+.border-box {
+    box-sizing:border-box;
+}
+
+.font-size-dot-8rem {
+    font-size:.8rem;
+}
+
+.table-row {
+    display:table;
+}
+
+.table-row.row::after {
+    display:inline;
+    clear:non;
+}
+
+.table-row > .cell {
+    float:none;
+    display:table-cell;
+}
+
+.border-red {
+    border:10px solid red;
+}
+
+.border-green {
+    border:10px solid green;
+}
+
+.border-blue {
+    border:10px solid blue;
+}
+
+.border-gold {
+    border:10px solid gold;
+}
+
+.border-pink {
+    border:10px solid pink;
+}
+
+/* 라이브러리 - flex */
+* > .flex {
+    display:flex;
+}
+
+* > .flex-grow-1 {
+    flex-grow:1;
+}
+
+* > .flex-jc-c {
+    justify-content:center;
+}
+
+* > .flex-jc-s {
+    justify-content:flex-start;
+}
+
+* > .flex-jc-e {
+    justify-content:flex-end;
+}
+
+* > .flex-jc-sb {
+    justify-content:space-between;
+}
+
+* > .flex-ai-c {
+    align-items:center;
+}
+
+* > .flex-ai-s {
+    align-items:flex-start;
+}
+
+* > .flex-ai-e {
+    align-items:flex-end;
+}
+
+* > .flex-as-s {
+    align-self:stretch;
+}
+
+* > .flex-as-c {
+    align-self:center;
+}
+
+* > .flex-as-s {
+    align-self:flex-start;
+}
+
+* > .flex-as-e {
+    align-self:flex-end;
+}
+
+* > .flex-column-nowrap {
+    flex-flow:column nowrap;
+}
+
+* > .flex-column-wrap {
+    flex-flow:column wrap;
+}
+
+* > .flex-row-wrap {
+    flex-flow:row wrap;
+}
+
+.flex-ch-basis-0 > * {
+    flex-basis:0;
+}
+
+* > .flex-1-0-0 {
+    flex:1 0 0;
+}
+
+/* 커스텀 */
+
+.con {
+    max-width:1521px;
+}
+
+.box-1 > ul > li > .block {
+    width:492px;
+}
+
+.box-1 > ul > li > .block::before {
+    content:"";
+    background-image:url(https://www.pubgesports.com/static/img/bg_post_line.png);
+    position:absolute;
+    top:-3%;
+    left:-3%;
+    right:-3%;
+    bottom:-3%;
+    transform:translateX(-20px) translateY(-20px);
+    background-size:contain;
+    background-repeat:no-repeat;
+    transition: transform 0.4s;
+    z-index:10;
+}
+
+.box-1 > ul > li:hover > .block::before {
+    transform:translateX(0) translateY(0);
+}
+
+.box-1 > ul > li > .block::after {
+    content:"";
+    display:block;
+    padding-top:95.78059071729958%;
+}
+
+.box-1 > ul > li > .block > div > .img-box {
+    background-size:cover;
+    background-position:center;
+}
+
+.box-1 > ul > li > .block > div > .img-box::after {
+    content:"";
+    display:block;
+    padding-top:56.1181%;
+}
+
+.box-1 > ul > li > .block > div > .txt-box {
+    background-color:pink;
+}
+
+@media ( max-width:1476px ) {
+    .box-1 {
+        max-width:none;
+        margin-left:30px;
+        margin-right:30px;
+    }
+
+    .box-1 > ul {
+        flex-wrap:wrap;
+    }
+
+    .box-1 > ul > li {
+        margin-top:60px;
+        width:calc(50% - 60px / 2);
+        box-sizing:border-box;
+    }
+
+    .box-1 > ul > li:nth-child(2n + 1) {
+        margin-right:60px;
+    }
+
+    .box-1 > ul > li > .block {
+        width:auto;
+    }
+}
+```
