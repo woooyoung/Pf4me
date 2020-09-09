@@ -408,3 +408,301 @@ $(function() {
   $('.youtube-popup-bg').click(YoutubePopup__hide);
 });
 ```
+
+### owl-carousel
+```html
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- owl 캐러셀 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<div class="box-1 con">
+  <div class="my-slider-1">
+    <div class="head flex flex-jc-e">
+      <div class="control-box flex">
+        <div class="index-box">
+          <span class="current-index">1</span>/<span class="total-count"></span>
+        </div>
+        <div class="nav-box">
+          <span class="btn-left">좌</span>/<span class="btn-right">우</span>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div>
+            <div class="img-box" style="background-image:url(https://www.hancomm.co.kr/file/board/upload/200422_%ED%95%98%EB%82%98%EC%9D%80%ED%96%89_%ED%95%98%EB%82%98%EC%9B%90%ED%81%90.jpg);"></div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="img-box" style="background-image:url(https://www.hancomm.co.kr//file/board/upload/200406_오로나민C_큰소리뻥뻥_헬스장.jpg);"></div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="img-box" style="background-image:url(https://www.hancomm.co.kr//file/board/upload/200406_오로나민C_큰소리뻥뻥_부부.jpg);"></div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="img-box" style="background-image:url(https://www.hancomm.co.kr//file/board/upload/200327_하이트진로_참이슬%20이슬방울.jpg);">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="img-box" style="background-image:url(https://www.hancomm.co.kr//file/board/upload/re_200201_bhc골드킹윙.jpg);">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="img-box" style="background-image:url(https://www.hancomm.co.kr//file/board/upload/1588730145857_191228_야나두_자동차B국문.jpg);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+```css
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.con {
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.flex {
+  display:flex;
+}
+
+.flex-jc-e {
+  justify-content:flex-end;
+}
+
+.flex-jc-sb {
+  justify-content:space-between;
+}
+
+html, body {
+  overflow-x:hidden;
+}
+
+.box-1 .my-slider-1 {
+  border:10px solid red;
+  position:relative;
+}
+
+.box-1 .my-slider-1::after {
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:10;
+  background-color:rgba(255,255,255,0.2);
+}
+
+.box-1 .my-slider-1.active::after {
+  display:none;
+}
+
+.box-1 .my-slider-1 > .head > .control-box {
+  border:10px solid green;
+  transform:translateX(100%);
+  opacity:0;
+  transition:transform 0.4s, opacity 0.4s;
+  width:150px;
+}
+
+.box-1 .my-slider-1.active > .head > .control-box {
+  transform:translateX(0);
+  opacity:1;
+}
+
+@media ( min-width:1401px ) {
+  .box-1 .my-slider-1 > .body {
+    margin-right:-1950px;
+  }
+}
+
+@media ( max-width:1400px ) and ( min-width:1101px ) {
+  .box-1 .my-slider-1 > .body {
+    margin-right:-1050px;
+  }
+}
+
+@media ( max-width:1100px ) and ( min-width:801px ) {
+  .box-1 .my-slider-1 > .body {
+    margin-right:-750px;
+  }
+}
+
+@media ( max-width:800px ) and ( min-width:501px ) {
+  .box-1 .my-slider-1 > .body {
+    margin-right:-450px;
+  }
+}
+
+.box-1 .my-slider-1 .item {
+  transform:translateX(50px);
+  transition:transform 0.3s;
+}
+
+.box-1 .my-slider-1 .item[data-no="0"] {
+  transition:transform 0.3s 0s;
+}
+
+.box-1 .my-slider-1 .item[data-no="1"] {
+  transition:transform 0.3s .07s;
+}
+
+.box-1 .my-slider-1 .item[data-no="2"] {
+  transition:transform 0.3s .14s;
+}
+
+.box-1 .my-slider-1 .item[data-no="3"] {
+  transition:transform 0.3s .21s;
+}
+
+.box-1 .my-slider-1.active .item {
+  transform:translateX(0);
+}
+
+.box-1 .my-slider-1 > .body {
+  position:relative;
+}
+
+.box-1 .my-slider-1 > .body::before {
+  content:"";
+  position:absolute;
+  left:0;
+  width:50px;
+  height:100%;
+  background-color:white;
+  transition:width 0.3s;
+  z-index:10;
+}
+
+.box-1 .my-slider-1.active > .body::before {
+  width:0;
+}
+
+.box-1 .my-slider-1 .item > div > .img-box {
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.box-1 .my-slider-1 .item > div > .img-box::after {
+  content:"";
+  display:block;
+  padding-top:100%;
+}
+```
+```javascript
+function MySlider1__updateCurrentPageNumber(event) {
+  var $owl = $(event.target);
+  var index = $owl.find('.owl-item.active').first().find(' > .item').attr('data-no');
+  index = parseInt(index);
+
+  var $currentIndex = $owl.parent().parent().find('.head > .control-box > .index-box > .current-index');
+
+  $currentIndex.text(index + 1);
+}
+
+function MySlider1__init() {
+  var owlNowSliding = false;
+  var slidingDuration = 1000;
+
+  $('.my-slider-1').each(function(index, el) {
+    var $mySlider1 = $(el);
+    var $item = $mySlider1.find('.item');
+    totalCount = $item.length;
+
+    $item.each(function(index, itemEl) {
+      var $itemEl = $(itemEl);
+      $itemEl.attr('data-no', $itemEl.index());
+    });
+
+    var $totalCount = $mySlider1.find('> .head >  .control-box > .index-box > .total-count');
+    $totalCount.text(totalCount);
+  });
+
+  var owl = $('.my-slider-1 .owl-carousel').owlCarousel({
+    loop:true,
+    items:6,
+    smartSpeed:slidingDuration,
+    onInitialized: MySlider1__updateCurrentPageNumber,
+    onTranslated: MySlider1__updateCurrentPageNumber,
+  });
+
+  owl.on('mousewheel', '.owl-stage', function (e) {
+    e.preventDefault();
+
+    if ( owlNowSliding ) {
+      return;
+    }
+
+    owlNowSliding = true;
+
+    var deltaY = e.deltaY;
+
+    if ( deltaY == undefined ) {
+      deltaY = e.originalEvent.wheelDelta;
+    }
+
+    if (deltaY<0) {
+      owl.trigger('next.owl');
+    } else {
+      owl.trigger('prev.owl');
+    }
+
+    setTimeout(function() {
+      owlNowSliding = false;
+    }, slidingDuration);
+  });
+
+  $('.my-slider-1 > .head > .control-box > .nav-box > span').click(function() {
+    if ( owlNowSliding ) {
+      return;
+    }
+
+    owlNowSliding = true;
+
+    var $clicked = $(this);
+
+    if ( $clicked.is(':first-child') ) {
+      owl.trigger('prev.owl');
+    }
+    else {
+      owl.trigger('next.owl');
+    }
+
+    setTimeout(function() {
+      owlNowSliding = false;
+    }, slidingDuration);
+  });
+  
+  setTimeout(function() {
+    $('.my-slider-1').addClass('active');
+  }, 1500);
+}
+
+$(function() {
+  MySlider1__init();
+})
+```
