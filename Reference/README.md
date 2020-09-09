@@ -706,3 +706,86 @@ $(function() {
   MySlider1__init();
 })
 ```
+
+### showing text
+```html
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<div class="box-1">
+  <div class="txt-box-1">
+    안녕하세요.
+  </div>
+</div>
+```
+```css
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.con {
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.flex {
+  display:flex;
+}
+
+.flex-jc-e {
+  justify-content:flex-end;
+}
+
+.flex-jc-sb {
+  justify-content:space-between;
+}
+
+.video-box > video {
+  width:100%;
+  display:block;
+}
+
+.box-1 {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:600px;
+}
+
+.box-1 > .txt-box-1 {
+  font-size:4rem;
+  font-weight:bold;
+  letter-spacing:-0.3rem;
+  color:transparent;
+  position:relative;
+  transition:color 0s 1s;
+  overflow:hidden;
+}
+
+.box-1 > .txt-box-1::before {
+  content:"";
+  position:absolute;
+  left:-1000%;
+  top:0;
+  width:1000%;
+  bottom:0;
+  background-color:black;
+  transition:left 2s;
+}
+
+.box-1.active > .txt-box-1::before {
+  left:200%;
+}
+
+.box-1.active > .txt-box-1 {
+  color:black;
+}
+```
+```javascript
+setTimeout(function() {
+  $('.box-1').addClass('active');
+}, 1000);
+```
