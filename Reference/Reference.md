@@ -293,7 +293,7 @@ $(function() {
 /* 발견되면 활성화시키는 라이브러리 끝 */
 ```
 
-#### video-popup
+#### video-popup(linefriends)
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -788,4 +788,113 @@ body, ul, li {
 setTimeout(function() {
   $('.box-1').addClass('active');
 }, 1000);
+```
+
+### video-popup
+```html
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="pop-1-bg"></div>
+<div class="pop-1">
+  <div class="head">
+    <button class="btn-close">닫기</button>
+  </div>
+  <div class="body">
+    <div class="client"></div>
+    <div class="title"></div>
+    <div class="video-box"></div>
+  </div>
+</div>
+
+
+<button onclick="Pop1__open('KEB하나은행', 'KEB하나은행 하나원큐', 'https://www.hancomm.co.kr/file/board/upload/200422_하나은행_하나원큐.mp4');">열기1</button>
+
+
+<button onclick="Pop1__open('동아오츠카', '오로나민C 큰소리 뻥뻥 헬스장', 'https://www.hancomm.co.kr/file/board/upload/200406_오로나민C_큰소리뻥뻥_헬스장.mp4');">열기2</button>
+```
+```css
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.con {
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.flex {
+  display:flex;
+}
+
+.flex-jc-e {
+  justify-content:flex-end;
+}
+
+.flex-jc-sb {
+  justify-content:space-between;
+}
+
+.video-box > video {
+  width:100%;
+  display:block;
+}
+
+/* 팝업1 시작 */
+.pop-1-bg {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.3);
+  display:none;
+}
+
+.pop-1-bg.active {
+  display:block;
+}
+
+.pop-1-bg + .pop-1 {
+  width:900px;
+  background-color:white;
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%) translateY(-1000px);
+  top:100px;
+  transition:transform 0.4s;
+  padding:30px;
+}
+
+.pop-1-bg.active + .pop-1 {
+  transform:translateX(-50%) translateY(0);
+}
+/* 팝업1 끝 */
+```
+```javascript
+function Pop1__open(client, title, url) {
+  $('.pop-1-bg').addClass('active');
+  var $pop1 = $('.pop-1');
+  
+  $pop1.find('.client').text(client);
+  $pop1.find('.title').text(title);
+  $pop1.find('.video-box').html('<video src="' + url + '" controls="" autoplay="" muted></video>');
+}
+
+function Pop1__close() {
+  $('.pop-1-bg').removeClass('active');
+  var $pop1 = $('.pop-1');
+  
+  $pop1.find('.client').text('');
+  $pop1.find('.title').text('');
+  $pop1.find('.video-box').html('');
+}
+
+function Pop1__init() {
+  $('.pop-1 .btn-close, .pop-1-bg').click(Pop1__close);
+}
+
+Pop1__init();
 ```
