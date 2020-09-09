@@ -206,3 +206,89 @@ function SliderP__stopAnimate($slider) {
 SliderP__init('.slider-p-1');
 SliderP__init('.slider-p-2');
 ```
+
+### active-on-visible
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="con">
+lorem*50
+</div>
+
+<div class="a active-on-visible" data-active-on-visible-delay="0"></div>
+<div class="a active-on-visible" data-active-on-visible-delay="300"></div>
+<div class="a active-on-visible" data-active-on-visible-delay="600"></div>
+<div class="a active-on-visible" data-active-on-visible-delay="900"></div>
+```
+```css
+.a {
+  width:200px;
+  height:200px;
+  background-color:red;
+  transform:translateX(100%);
+  opacity:0;
+  transition: transform 1s, opacity 1s;
+}
+
+.a.active {
+  transform:translateX(0) rotate(360deg);
+  opacity:1;
+}
+```
+```javascript
+/* 발견되면 활성화시키는 라이브러리 시작 */
+function ActiveOnVisible__init() {
+    $(window).resize(ActiveOnVisible__initOffset);
+    ActiveOnVisible__initOffset();
+
+    $(window).scroll(ActiveOnVisible__checkAndActive);
+    ActiveOnVisible__checkAndActive();
+}
+
+function ActiveOnVisible__initOffset() {
+    $('.active-on-visible').each(function(index, node) {
+        var $node = $(node);
+
+        var offsetTop = $node.offset().top;
+        $node.attr('data-active-on-visible-offsetTop', offsetTop);
+
+        if ( !$node.attr('data-active-on-visible-diff-y') ) {
+            $node.attr('data-active-on-visible-diff-y', '0');
+        }
+
+        if ( !$node.attr('data-active-on-visible-delay') ) {
+            $node.attr('data-active-on-visible-delay', '0');
+        }
+    });
+
+    ActiveOnVisible__checkAndActive();
+}
+
+function ActiveOnVisible__checkAndActive() { 
+    $('.active-on-visible:not(.actived)').each(function(index, node) {
+        var $node = $(node);
+
+        var offsetTop = $node.attr('data-active-on-visible-offsetTop') * 1;
+        var diffY = parseInt($node.attr('data-active-on-visible-diff-y'));
+        var delay = parseInt($node.attr('data-active-on-visible-delay'));
+
+        var callbackFuncName = $node.attr('data-active-on-visible-callback-func-name');
+
+        if ( $(window).scrollTop() + $(window).height() + diffY > offsetTop ) {
+            $node.addClass('actived');
+
+            setTimeout(function() {
+                $node.addClass('active');
+                if ( window[callbackFuncName] ) {
+                    window[callbackFuncName]($node);
+                }
+            }, delay);
+        }
+    });
+}
+
+$(function() {
+    ActiveOnVisible__init();
+})
+/* 발견되면 활성화시키는 라이브러리 끝 */
+```
