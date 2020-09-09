@@ -898,3 +898,567 @@ function Pop1__init() {
 
 Pop1__init();
 ```
+
+### miral.org
+```
+http://www.miral.org/main/main.asp
+```
+```html
+<!-- 유용한 링크 -->
+<!-- cdnsj : https://cdnjs.com/ -->
+<!-- 폰트어썸 아이콘 리스트 : https://fontawesome.com/icons?d=gallery&m=free -->
+
+<!-- 구글 폰트 불러오기 -->
+<!-- rotobo(400/700/900), notosanskr(400/600/900) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="box-1 active-on-visible con flex" data-active-on-visible-callback-func-name="count">
+  <div class="flex-1-0-0 flex border-red">
+    <div class="border-green relative flex flex-jc-e">
+      <div class="border-gold relative flex flex-ai-e flex-jc-c">
+        <div>
+          <span class="num" data-num-ani-slow-point="0.9" data-num-ani-slow-add-interval="10" data-num-ani-interval="40" data-num-ani-stride="41" data-num-ani-start="0" data-num-ani-end="8785"></span>명
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="icon-circle"></div>
+  </div>
+  <div class="flex-1-0-0 flex flex-jc-e border-red">
+    <div class="border-green relative flex">
+      <div class="border-gold relative flex flex-ai-e flex-jc-c">
+        <div>
+          <span class="num" data-num-ani-slow-point="0.9" data-num-ani-slow-add-interval="10" data-num-ani-interval="40" data-num-ani-stride="41" data-num-ani-start="0" data-num-ani-end="8785"></span>명
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+```css
+html {
+  /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+/* 노말라이즈 */
+body, ul, li, h1 {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+label[for] {
+  cursor:pointer;
+  user-select:none;
+}
+
+/* 라이브러리 */
+.block {
+  display:block;
+}
+
+.inline-block {
+  display:inline-block;
+}
+
+.absolute-left {
+  position:absolute;
+  left:0;
+}
+
+.absolute-right {
+  position:absolute;
+  right:0;
+}
+
+.absolute-bottom {
+  position:absolute;
+  bottom:0;
+}
+
+.absolute-top {
+  position:absolute;
+  top:0;
+}
+
+.absolute-center {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.absolute-middle {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.absolute-middle.absolute-center {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+}
+
+.relative {
+  position:relative;
+}
+
+.cell {
+  float:left;
+  box-sizing:border-box;
+}
+
+.cell-right {
+  float:right;
+  box-sizing:border-box;
+}
+
+.row::after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.clear-both {
+  clear:both;
+}
+
+.img-box > img {
+  width:100%;
+  display:block;
+}
+
+.con {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.margin-0-auto {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.text-align-center {
+  text-align:center;
+}
+
+.text-align-right {
+  text-align:right;
+}
+
+.line-height-0 {
+  line-height:0;
+}
+
+.line-height-0 > * {
+  line-height:normal;
+}
+
+.width-30px {
+  width:30px;
+}
+
+.width-35px {
+  width:35px;
+}
+
+.width-40px {
+  width:35px;
+}
+
+.width-45px {
+  width:35px;
+}
+
+.width-50px {
+  width:50px;
+}
+
+.width-80px {
+  width:80px;
+}
+
+.width-100px {
+  width:100px;
+}
+
+.width-100p {
+  width:100%;
+}
+
+.width-60p {
+  width:60%;
+}
+
+.width-55p {
+  width:55%;
+}
+
+.width-50p {
+  width:50%;
+}
+
+.width-45p {
+  width:45%;
+}
+
+.width-40p {
+  width:40%;
+}
+
+.width-30p {
+  width:30%;
+}
+
+.width-35p {
+  width:35%;
+}
+
+.width-100p-except-30px {
+  width:calc(100% - 30px);
+}
+
+.width-100p-except-35px {
+  width:calc(100% - 35px);
+}
+
+.width-100p-except-40px {
+  width:calc(100% - 40px);
+}
+
+.width-100p-except-50px {
+  width:calc(100% - 50px);
+}
+
+.width-100p-except-80px {
+  width:calc(100% - 80px);
+}
+
+.width-100p-except-100px {
+  width:calc(100% - 100px);
+}
+
+.height-100p {
+  height:100%;
+}
+
+.height-50p {
+  height:50%;
+}
+
+.border-box {
+  box-sizing:border-box;
+}
+
+.font-size-dot-8rem {
+  font-size:.8rem;
+}
+
+.table-row {
+  display:table;
+}
+
+.table-row.row::after {
+  display:inline;
+  clear:non;
+}
+
+.table-row > .cell {
+  float:none;
+  display:table-cell;
+}
+
+.border-red {
+  border:10px solid red;
+}
+
+.border-green {
+  border:10px solid green;
+}
+
+.border-blue {
+  border:10px solid blue;
+}
+
+.border-gold {
+  border:10px solid gold;
+}
+
+.border-pink {
+  border:10px solid pink;
+}
+
+/* 라이브러리 - flex */
+* > .flex {
+  display:flex;
+}
+
+* > .flex-grow-1 {
+  flex-grow:1;
+}
+
+* > .flex-jc-c {
+  justify-content:center;
+}
+
+* > .flex-jc-s {
+  justify-content:flex-start;
+}
+
+* > .flex-jc-e {
+  justify-content:flex-end;
+}
+
+* > .flex-jc-sb {
+  justify-content:space-between;
+}
+
+* > .flex-ai-c {
+  align-items:center;
+}
+
+* > .flex-ai-s {
+  align-items:flex-start;
+}
+
+* > .flex-ai-e {
+  align-items:flex-end;
+}
+
+* > .flex-as-s {
+  align-self:stretch;
+}
+
+* > .flex-as-c {
+  align-self:center;
+}
+
+* > .flex-as-s {
+  align-self:flex-start;
+}
+
+* > .flex-as-e {
+  align-self:flex-end;
+}
+
+* > .flex-column-nowrap {
+  flex-flow:column nowrap;
+}
+
+* > .flex-column-wrap {
+  flex-flow:column wrap;
+}
+
+* > .flex-row-wrap {
+  flex-flow:row wrap;
+}
+
+.flex-ch-basis-0 > * {
+  flex-basis:0;
+}
+
+* > .flex-1-0-0 {
+  flex:1 0 0;
+}
+
+/* 커스텀 */
+.con-min-width {
+  min-width:1356px;
+}
+
+.con {
+  width:1356px;
+}
+
+.box-1 {
+  margin-top:1000px;
+}
+
+.box-1 .icon-circle {
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background-color:green;
+  background-image:url(http://www.miral.org/images/main/icon_infograph.png);
+  background-position:center;
+  transform:scale(0);
+  transition:transform 0.3s cubic-bezier(0.390, 0.575, 0.175, 1.270);
+}
+
+.box-1.active .icon-circle {
+  transform:scale(1);
+}
+
+.box-1 > :not(:nth-child(2)) > div {
+  width:0;
+  transition:width 1s;
+}
+
+.box-1 > :not(:nth-child(2)) > div::before {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:0;
+  width:100%;
+  height:1px;
+  background-color:black;
+}
+
+.box-1.active > :not(:nth-child(2)) > div {
+  width:100%;
+}
+
+.box-1 > :not(:nth-child(2)) > div > div {
+  width:100px;
+}
+
+.box-1 > :not(:nth-child(2)) > div > div::before, .box-1 > :not(:nth-child(2)) > div > div::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background-color:black;
+}
+
+.box-1 > :not(:nth-child(2)) > div > div::after {
+  transform:translateY(-50%);
+  left:auto;
+  right:0;
+}
+
+.box-1 > :last-child > div > div::after {
+  transform:translateY(-50%);
+  left:0;
+  right:auto;
+}
+```
+```javascript
+/* 숫자 카운트 라이브러리 시작 */
+function NumAni__start(selector) {
+    $(selector).each(function(index, node) {
+        var $el = $(node);
+        
+        var start = parseInt($el.attr('data-num-ani-start'));
+        var interval = parseInt($el.attr('data-num-ani-interval'));
+
+        $el.attr('data-num-ani-interval-current', interval);
+
+        $el.text(start);
+
+        NumAni__increaseNum($el);
+    });
+}
+
+function NumAni__increaseNum($el) {
+    var current = parseInt($el.text());
+    var end = parseInt($el.attr('data-num-ani-end'));
+    var stride = parseInt($el.attr('data-num-ani-stride'));
+    var interval = parseInt($el.attr('data-num-ani-interval-current'));
+    var slowPoint = parseFloat($el.attr('data-num-ani-slow-point'))
+
+    if (current < end) {
+        if ( current > end * slowPoint ) {
+            interval += parseInt($el.attr('data-num-ani-slow-add-interval'));
+            if ( interval > 100 ) {
+                interval = 100;
+            }
+            $el.attr('data-num-ani-interval-current', interval);
+        }
+
+        if ( current + stride > end ) {
+            $el.text(end);
+        }
+        else {
+            $el.text(current + stride);
+        }
+
+        setTimeout(function () {
+            NumAni__increaseNum($el);
+        }, interval);
+    }
+    else {
+        $el.addClass('num-action-done');
+    }
+}
+/* 숫자 카운트 라이브러리 끝 */
+
+/* 발견되면 활성화시키는 라이브러리 시작 */
+function ActiveOnVisible__init() {
+    $(window).resize(ActiveOnVisible__initOffset);
+    ActiveOnVisible__initOffset();
+
+    $(window).scroll(ActiveOnVisible__checkAndActive);
+    ActiveOnVisible__checkAndActive();
+}
+
+function ActiveOnVisible__initOffset() {
+    $('.active-on-visible').each(function(index, node) {
+        var $node = $(node);
+
+        var offsetTop = $node.offset().top;
+        $node.attr('data-active-on-visible-offsetTop', offsetTop);
+
+        if ( !$node.attr('data-active-on-visible-diff-y') ) {
+            $node.attr('data-active-on-visible-diff-y', '0');
+        }
+
+        if ( !$node.attr('data-active-on-visible-delay') ) {
+            $node.attr('data-active-on-visible-delay', '0');
+        }
+    });
+
+    ActiveOnVisible__checkAndActive();
+}
+
+function ActiveOnVisible__checkAndActive() { 
+    $('.active-on-visible:not(.actived)').each(function(index, node) {
+        var $node = $(node);
+
+        var offsetTop = $node.attr('data-active-on-visible-offsetTop') * 1;
+        var diffY = parseInt($node.attr('data-active-on-visible-diff-y'));
+        var delay = parseInt($node.attr('data-active-on-visible-delay'));
+
+        var callbackFuncName = $node.attr('data-active-on-visible-callback-func-name');
+
+        if ( $(window).scrollTop() + $(window).height() + diffY > offsetTop ) {
+            $node.addClass('actived');
+
+            setTimeout(function() {
+                $node.addClass('active');
+                if ( window[callbackFuncName] ) {
+                    window[callbackFuncName]($node);
+                }
+            }, delay);
+        }
+    });
+}
+
+$(function() {
+    ActiveOnVisible__init();
+})
+/* 발견되면 활성화시키는 라이브러리 끝 */
+
+// 커스텀 시작
+function count($node) {
+    NumAni__start('.num');
+}
+// 커스텀 끝
+```
