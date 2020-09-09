@@ -60,3 +60,28 @@
 
 [17차시도](https://codepen.io/woooyoung/pen/gOrPWmv)
 - 3rd page guide list
+
+# SpartanRace Redesign
+
+## 관련링크
+[SpartanRace](https://www.spartanrace.kr/ko)
+
+[irunner](http://www.irunner.co.kr/)
+
+### top-bar
+[1차시도](https://codepen.io/woooyoung/pen/gOrMjQQ)
+- top-bar logo & menu-box
+
+### back-ground
+[2차시도](https://codepen.io/woooyoung/pen/KKzggmM)
+- background img & full_page
+
+[3차시도](https://codepen.io/woooyoung/pen/vYGXydG)
+- background video --->(x)
+
+[4차시도](https://codepen.io/woooyoung/pen/WNwRJoP)
+- background grayscale
+
+### Like i-runner
+[5차시도](https://codepen.io/woooyoung/pen/MWypKyd)
+- overflow-x
