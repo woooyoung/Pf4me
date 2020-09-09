@@ -292,3 +292,119 @@ $(function() {
 })
 /* 발견되면 활성화시키는 라이브러리 끝 */
 ```
+
+#### video-popup
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!--
+<iframe width="1077" height="603" src="https://www.youtube.com/embed/YdGtxXYIFQc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+
+<button class="btn-1">버튼1 - YdGtxXYIFQc</button>
+<button class="btn-2">버튼2 - jiDjGO13ccU</button>
+
+<div class="youtube-popup-bg">
+  <div class="btn-close"></div>
+</div>
+<div class="youtube-popup">
+  <iframe frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+```
+```css
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+body {
+  height:10000px;
+}
+
+.youtube-popup-bg {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.8);
+  visibility:hidden;
+  opacity:0;
+  transition: visibility 0.4s, opacity 0.4s;
+}
+
+.youtube-popup-actived .youtube-popup-bg {
+  opacity:1;
+  visibility:visible;
+}
+
+html.youtube-popup-actived, html.youtube-popup-actived > body {
+  overflow:hidden;
+}
+
+.youtube-popup-bg .btn-close {
+  position:absolute;
+  width:70px;
+  height:70px;
+  border:10px solid red;
+  top:50%;
+  left:50%;
+  margin-top:-400px;
+  transform:translateX(-50%);
+  cursor:pointer;
+}
+
+.youtube-popup {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  width:100%;
+  max-width:700px;
+  transition: visibility 0.4s, opacity 0.4s;
+  visibility:hidden;
+  opacity:0;
+}
+
+.youtube-popup-actived .youtube-popup {
+  transition: visibility 0.4s .4s, opacity 0.4s .4s;
+  visibility:visible;
+  opacity:1;
+}
+
+.youtube-popup::after {
+  content:"";
+  display:block;
+  padding-top: 56.25%;
+}
+
+.youtube-popup > iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+```
+```javascript
+function YoutubePopup__show(videoId) {
+  $('html').addClass('youtube-popup-actived');
+  $('.youtube-popup > iframe').attr('src', 'https://www.youtube.com/embed/' + videoId)
+}
+
+function YoutubePopup__hide() {
+  $('html').removeClass('youtube-popup-actived');
+}
+
+$(function() {
+  $('.btn-1').click(function() {
+    YoutubePopup__show('YdGtxXYIFQc');
+  });
+  $('.btn-2').click(function() {
+    YoutubePopup__show('jiDjGO13ccU');
+  });
+  
+  $('.youtube-popup-bg').click(YoutubePopup__hide);
+});
+```
