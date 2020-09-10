@@ -1931,3 +1931,421 @@ label[for] {
     }
 }
 ```
+
+### Linefriends-slider
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="slider-x slider-x-1">
+  <div class="slides">
+    <div data-slider-x-img-type-1="뉴욕타임스퀘어" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/5e9e58d2a43c40a599b8918bd72c9df5.jpg"></div>
+    <div data-slider-x-img-type-1="뉴욕타임스퀘어" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/358880900eb04b75a2f854666f0bc2a8.jpg"></div>
+    <div data-slider-x-img-type-1="뉴욕타임스퀘어" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/5063a11e33b543ceaf0749cd0c644ac6.jpg"></div>
+    <div data-slider-x-img-type-1="뉴욕타임스퀘어" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/67b21996a3344742a5662171cd7677b8.jpg"></div>
+    <div data-slider-x-img-type-1="뉴욕타임스퀘어" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/90278d132a464ce2aa2326c23c379790.jpg"></div>
+    <div data-slider-x-img-type-1="LA할리우드" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/5d5a2304f96f4e25a92b660e6e5c9aec.jpg"></div>
+    <div data-slider-x-img-type-1="LA할리우드" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/5370159d45a54ad6bb9051449b7906e9.jpg"></div>
+    <div data-slider-x-img-type-1="LA할리우드" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/8f91f100acfe4d6eacec67ce43022063.jpg"></div>
+    <div data-slider-x-img-type-1="LA할리우드" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/7c81dce4b6714f0e8f5a2e42205a7f2a.jpg"></div>
+    <div data-slider-x-img-type-1="LA할리우드" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/3d1ef121f4f44514ab65c7840480f497.jpg"></div>
+    <div data-slider-x-img-type-1="상해신천지" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/1fa25ad4d21c43dbb600fb2005174f7d.jpg"></div>
+    <div data-slider-x-img-type-1="상해신천지" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/b025451ab5b44afb9ef69424633f0d28.jpg"></div>
+    <div data-slider-x-img-type-1="상해신천지" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/0f7091cb256146a78c93bc3511953e79.jpg"></div>
+    <div data-slider-x-img-type-1="상해신천지" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/b29b64c51d63420c9cb428463bd478b2.jpg"></div>
+    <div data-slider-x-img-type-1="상해신천지" data-slider-x-img-url="https://www.linefriends.com/content/photo/201901/2893a93c9b884928aadbfb2d9b15cd9c.jpg"></div>
+  </div>
+  <div class="side-btns">
+    <div></div>
+    <div></div>
+  </div>
+  <div class="page-box flex flex-jc-c">
+    <button>좌</button>
+    <div class="pages flex flex-jc-c">
+      
+    </div>
+    <button>우</button>
+  </div>
+</div>
+```
+```css
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+body {
+  height:10000px;
+}
+
+.flex {
+  display:flex;
+}
+
+.flex-jc-c {
+  justify-content:center;
+}
+
+.slider-x {
+  height:100vh;
+  position:relative;
+}
+
+.slider-x > .slides > div {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  opacity:0;
+  visibility:hidden;
+  transition: opacity 1s, visibility 1s;
+}
+
+.slider-x > .slides > div.active {
+  opacity:1;
+  visibility:visible;
+}
+
+.slider-x > .side-btns > div {
+  width:100px;
+  height:100px;
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  background-color:red;
+}
+
+.slider-x > .side-btns > div:last-child {
+  left:auto;
+  right:0;
+}
+
+.slider-x > .page-box {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+}
+
+.slider-x > .page-box > .pages > div {
+  width:100px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  display:none;
+}
+
+.slider-x > .page-box > .pages > div.visible {
+  display:block;
+}
+
+.slider-x > .page-box > .pages > div.active {
+  border:2px solid red;
+}
+
+.slider-x > .page-box > .pages > div::after {
+  content:"";
+  display:block;
+  padding-top:60%;
+}
+```
+```javascript
+console.clear();
+function SliderX__init(selector) {
+  var $slider = $(selector);
+  
+  var $pages = $slider.find('.page-box > .pages');
+  
+  var slidesCount = $slider.find('.slides > div').length;
+  var currentIndex = 0;
+  
+  $slider.data('slider-x-slidesCount', slidesCount);
+  $slider.data('slider-x-currentIndex', currentIndex);
+  
+  $slider.find('.slides > div').each(function(index, el) {
+    var $el = $(el)
+    var type1 = $el.attr('data-slider-x-img-type-1');
+    var imgUrl = $el.attr('data-slider-x-img-url');
+    
+    $el.css('background-image', 'url(' + imgUrl + ')');
+    
+    var $btn = $('<div></div>');
+    $btn.css('background-image', 'url(' + imgUrl + ')');
+    $btn.attr('data-slider-x-img-type-1', type1);
+    $pages.append($btn);
+  });
+  
+  $pages.find(' > div').click(function() { 
+    SliderX__show($slider, $(this).index());
+  });
+  
+  $slider.find('.side-btns > div:first-child').click(function() {
+    SliderX__movePrev($slider);
+  });
+  
+  $slider.find('.side-btns > div:last-child').click(function() {
+    SliderX__moveNext($slider);
+  });
+  
+  $slider.find('.page-box > :first-child').click(function() {
+    SliderX__movePrevGroup($slider);
+  });
+  
+  $slider.find('.page-box > :last-child').click(function() {
+    SliderX__moveNextGroup($slider);
+  });
+
+  SliderX__show($slider, 0);
+}
+
+function SliderX__movePrev($slider) {
+  var postIndex = $slider.data('slider-x-currentIndex') - 1;
+  var slidesCount = $slider.data('slider-x-slidesCount');
+  
+  if ( postIndex < 0 ) {
+    postIndex = slidesCount - 1;
+  }
+  
+  SliderX__show($slider, postIndex);
+}
+
+function SliderX__moveNext($slider) {
+  var postIndex = $slider.data('slider-x-currentIndex') + 1;
+  var slidesCount = $slider.data('slider-x-slidesCount');
+  
+  if ( postIndex + 1 > slidesCount ) {
+    postIndex = 0;
+  }
+  
+  SliderX__show($slider, postIndex);
+}
+
+function SliderX__movePrevGroup($slider) {
+  var currentIndex = $slider.data('slider-x-currentIndex');
+  
+  // 현재 활성화된 녀석
+  var $current = $slider.find('.slides > div').eq(currentIndex);
+  
+  var type1 = $current.attr('data-slider-x-img-type-1');
+  
+  // 이전그룹의 마지막 녀석 찾기
+  var $post = $current.parent().children('[data-slider-x-img-type-1="' + type1 + '"]').first().prev();
+  
+  if ( $post.length > 0 ) {
+    var type1OfPost = $post.attr('data-slider-x-img-type-1');
+
+    $post = $current.parent().children('[data-slider-x-img-type-1="' + type1OfPost + '"]').first();
+  }
+  else {
+    $post = $current.parent().children().last();
+    
+    var type1OfPost = $post.attr('data-slider-x-img-type-1');
+
+    $post = $current.parent().children('[data-slider-x-img-type-1="' + type1OfPost + '"]').first();
+  }
+  
+  var postIndex = $post.index();
+  
+  SliderX__show($slider, postIndex);
+}
+
+function SliderX__moveNextGroup($slider) {
+  var currentIndex = $slider.data('slider-x-currentIndex');
+  
+  // 현재 활성화된 녀석
+  var $current = $slider.find('.slides > div').eq(currentIndex);
+  
+  var type1 = $current.attr('data-slider-x-img-type-1');
+  
+  // 다음그룹의 첫번째 찾기
+  var $post = $current.parent().children('[data-slider-x-img-type-1="' + type1 + '"]').last().next();
+  
+  if ( $post.length == 0 ) {
+    $post = $current.parent().children().first();
+  }
+  
+  var postIndex = $post.index();
+  
+  SliderX__show($slider, postIndex);
+}
+
+function SliderX__show($slider, postIndex) {
+  var currentIndex = $slider.data('slider-x-currentIndex');
+  var $current = $slider.find('.slides > div').eq(currentIndex);
+  var $post = $slider.find('.slides > div').eq(postIndex);
+  
+  var type1 = $post.attr('data-slider-x-img-type-1');
+  
+  $current.removeClass('active');
+  $post.addClass('active');
+  
+  $slider.data('slider-x-currentIndex', postIndex);
+  
+  $slider.find('.page-box > .pages > div').removeClass('active');
+  $slider.find('.page-box > .pages > div').eq(postIndex).addClass('active');
+  
+  $slider.find('.page-box > .pages > div').removeClass('visible');
+  $slider.find('.page-box > .pages > div[data-slider-x-img-type-1="' + type1 + '"]').addClass('visible');
+}
+
+$(function() {
+  SliderX__init('.slider-x-1');
+});
+```
+
+### CHANEL-slider
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="slider-u slider-u-1">
+  <div class="control-box">
+    <div class="progress-bar">
+      <div class="stick"></div>
+    </div>
+  </div>
+  <div class="slides">
+    <div style="background-image:url(https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_Haute_couture.jpg);"></div>
+    <div style="background-image:url('https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_Collection_M%C3%A9tiers_d\'art_201920_FSH_0720.jpg');"></div>
+    <div style="background-image:url(https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_BRIDAL_JEWELLERY_JP_KR_0420.jpg);"></div>
+    <div style="background-image:url(https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_J12_WATCHES_KR_0520.jpg);"></div>
+    <div style="background-image:url(https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_Inside_chanel_KR_0420_.jpg);"></div>
+    <div style="background-image:url(https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_Chance_fragrance_0119.jpg);"></div>
+    <div style="background-image:url(https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_LES_BEIGES_SUMMER_GLOW_0520_MU.jpg);"></div>
+    <div style="background-image:url(https://www.chanel.com/i18n/ko_KR/slides/landscape_ipad_HYDRA_BEAUTY_KR_0720.jpg);"></div>
+  </div>
+  
+  <div class="pages">
+    <div>오뜨 꾸뛰르</div>
+    <div>패션</div>
+    <div>화인 주얼리</div>
+    <div>시계</div>
+    <div>인사이드 샤넬</div>
+    <div>향수</div>
+    <div>메이크업</div>
+    <div>스킨케어</div>
+  </div>
+</div>
+```
+```css
+.slider-u > .slides {
+  border:10px solid red; /* 임시 */
+  position:relative;
+  height:500px;
+}
+
+.slider-u > .slides > div {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  opacity:0;
+  visibility:hidden;
+  transition: opacity 1s, visibility 1s;
+}
+
+.slider-u > .slides > div.active {
+  opacity:1;
+  visibility:visible;
+}
+
+.slider-u > .pages {
+  border:10px solid gold;
+  width:450px;
+  text-align:center;
+  margin:0 auto;
+}
+
+.slider-u > .pages > div {
+  border:5px solid blue;
+  display:inline-block;
+}
+
+.slider-u > .pages > div.active {
+  font-weight:bold;
+  color:red;
+}
+
+.slider-u > .control-box > .progress-bar {
+  width:200px;
+  height:50px;
+  border:2px solid black;
+  visibility:hidden; /* 이거는 옵션 */
+}
+
+.slider-u > .control-box > .progress-bar > .stick {
+  height:100%;
+  background-color:green;
+  width:0;
+}
+```
+```javascript
+console.clear();
+function SliderU__init(selector) {
+  var $slider = $(selector);
+  
+  // 페이지 버튼에 마우스 enter 이벤트 걸기
+  $slider.find('.pages > div').mouseenter(function() {
+    var $this = $(this);
+    var index = $this.index();
+    SliderU__show($slider, index);
+  });
+  
+  // 페이지 버튼에 마우스 leave 이벤트 걸기
+  $slider.find('.pages > div').mouseleave(function() {
+    SliderU__startTimeoutNext($slider);
+  });
+  
+  // 최초에 한번은 직접 실행해 준다.
+  SliderU__show($slider, 0);
+  SliderU__startTimeoutNext($slider);
+}
+
+function SliderU__show($slider, index) {
+  // 매번 보여줄 때 마다 스틱을 초기화 한다.
+  var $stick = $slider.find(' > .control-box > .progress-bar > .stick');
+  
+  $stick.css('width', '0');
+  $stick.stop();
+  
+  // 슬라이더 활성화
+  $slider.find('.slides > div.active').removeClass('active');
+  $slider.find('.slides > div').eq(index).addClass('active');
+  
+  // 패이지 버튼 활성화
+  $slider.find('.pages > div.active').removeClass('active');
+  $slider.find('.pages > div').eq(index).addClass('active');
+}
+
+function SliderU__moveNext($slider) {
+  var $post = $slider.find('.slides > div.active').next();
+  if ( $post.length == 0 ) {
+    SliderU__show($slider, 0);
+  }
+  else {
+    SliderU__show($slider, $post.index());
+  }
+}
+
+function SliderU__startTimeoutNext($slider) {
+  var $stick = $slider.find(' > .control-box > .progress-bar > .stick');
+  
+  $stick.css('width', '0');
+  $stick.stop().animate({
+    'width':'100%'
+  }, 4000, function() {
+    SliderU__moveNext($slider);
+    SliderU__startTimeoutNext($slider);
+  });
+}
+
+SliderU__init('.slider-u-1');
+```
