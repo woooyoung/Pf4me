@@ -2954,3 +2954,95 @@ function Height_Sync__sync() {
 
 HeightSync__init();
 ```
+
+### light-box
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+
+<h1>그룹 1</h1>
+<a data-title="잘가1" data-lightbox="example-set" href="https://placekitten.com/408/287">이미지1</a>
+<a data-title="잘가2" data-lightbox="example-set" href="https://placekitten.com/208/287" style="display:none;">이미지2</a>
+<a data-title="잘가3" data-lightbox="example-set" href="https://placekitten.com/108/287" style="display:none;">이미지3</a>
+
+<h1>그룹 2</h1>
+<a data-title="안녕1" data-lightbox="example-set2" href="https://placekitten.com/408/237">이미지1</a>
+<a data-title="안녕2" data-lightbox="example-set2" href="https://placekitten.com/308/257" style="display:none;">이미지2</a>
+<a data-title="안녕3" data-lightbox="example-set2" href="https://placekitten.com/408/257" style="display:none;">이미지3</a>
+```
+```javascript
+lightbox.option({
+  resizeDuration: 200,
+  wrapAround: true,
+  disableScrolling: false,
+  fitImagesInViewport:false
+})
+```
+
+### check-box-design
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+<i class="fas fa-check"></i>
+
+<h1>꾸밈</h1>
+<div class="form-control">
+  <div class="checkbox-wrap">
+    <input type="checkbox">
+    <span></span>
+  </div>
+</div>
+<h1>일반</h1>
+<input type="checkbox">
+```
+```css
+.checkbox-wrap {
+  display:inline-block;
+  padding:0px;
+  position:relative;
+  border:1px solid #afafaf;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.checkbox-wrap > input {
+  margin:0;
+  padding:0;
+  display:block;
+  width:30px;
+  height:30px;
+  opacity:0;
+  position:relative;
+  z-index:1;
+}
+.checkbox-wrap > input + span {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.checkbox-wrap > input + span::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight:900;
+  content:"\f00c";
+  color:white;
+  font-weight:bold;
+  font-size:1.2rem;
+  display:none;
+}
+
+.checkbox-wrap > input:checked + span {
+  background-color:#00c7ae;
+}
+
+.checkbox-wrap > input:checked + span::after {
+  display:block;
+}
+```
