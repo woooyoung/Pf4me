@@ -3481,3 +3481,300 @@ function FormStepBox__init() {
 
 FormStepBox__init();
 ```
+
+### Hover-list
+```html
+<div class="box-1 con relative flex">
+    <div class="item" style="background-color:red;"></div>
+    <div class="item" style="background-color:green;"></div>
+    <div class="item" style="background-color:blue;"></div>
+    <div class="item" style="background-color:pink;"></div>
+    <div class="item" style="background-color:green;"></div>
+    <div class="item" style="background-color:purple;"></div>
+    <div class="item" style="background-color:gold;"></div>
+    <div class="item" style="background-color:black;"></div>
+</div>
+```
+```css
+body, ul, li {
+    margin:0;
+    padding:0;
+    list-style:nonoe;
+}
+
+.con {
+    width:1000px;
+    margin:0 auto;
+}
+
+.flex {
+    display:flex;
+}
+
+.relative {
+    position:relative;
+}
+
+.box-1 {
+    height:500px;
+    overflow:hidden;
+}
+
+.box-1 > .item {
+    flex-grow:1;
+    transition:transform 0.3s;
+}
+
+.box-1 > .item:not(:first-child) {
+    margin-left:-100px;
+}
+
+.box-1 > .item:hover ~ .item {
+    transform:translateX(100px);
+}
+```
+
+### Six N Five
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+<div class="top-bar section-wrap">
+  <div class="con flex flex-jc-sb height-100p">
+    <div class="section flex" data-section-name="studio">
+      <h1>studio</h1>
+
+      <div class="des">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos porro sunt esse alias enim nihil dignissimos aperiam maiores minus expedita, reprehenderit cupiditate aut fuga dolor fugiat repellendus ullam! Odit, error.
+      </div>
+    </div>
+    <div class="section flex flex-jc-sb" data-section-name="films">
+      <h1>films</h1>
+
+      <div class="des">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quaerat veritatis, quisquam qui corrupti dolorum repellat maxime iure assumenda rerum? Deserunt quas aperiam voluptates neque voluptas facere adipisci illum fugiat?
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lists-box section-wrap">
+  <div class="con flex flex-jc-sb">
+    <div class="section" data-section-name="studio">
+      <div class="list masonry-grid">
+        <div class="grid-item">
+          <div>
+            <div class="img-box">
+              <img src="https://sixnfive.com/wp-content/uploads/2020/08/visual7_web-1-1280x1280.jpg" alt="">
+            </div>
+            <div class="title-box">
+              제목
+            </div>
+            <div class="writer-box">
+              작성자
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div>
+            <div class="img-box">
+              <img src="https://sixnfive.com/wp-content/uploads/2020/08/visual7_web-1-1280x1280.jpg" alt="">
+            </div>
+            <div class="title-box">
+              제목1
+            </div>
+            <div class="writer-box">
+              작성자1
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div>
+            <div class="img-box">
+              <img src="https://sixnfive.com/wp-content/uploads/2020/03/visual4_06-1280x1584.jpg" alt="">
+            </div>
+            <div class="title-box">
+              제목2
+            </div>
+            <div class="writer-box">
+              작성자2
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div>
+            <div class="img-box">
+              <img src="https://sixnfive.com/wp-content/uploads/2019/12/pa_black_4k-scaled-1-1280x853.jpg" alt="">
+            </div>
+            <div class="title-box">
+              제목3
+            </div>
+            <div class="writer-box">
+              작성자3
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div>
+            <div class="img-box">
+              <img src="https://sixnfive.com/wp-content/uploads/2019/12/thumbnail1-1280x1280.jpg" alt="">
+            </div>
+            <div class="title-box">
+              제목4
+            </div>
+            <div class="writer-box">
+              작성자4
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section flex flex-jc-sb" data-section-name="films">
+      리스트2
+    </div>
+  </div>
+</div>
+```
+```css
+/* no */
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+/* lib */
+.flex {
+  display:flex;
+}
+
+.flex-1-0-0 {
+  flex:1 0 0;
+}
+
+.flex-jc-sb {
+  justify-content:space-between;
+}
+
+.height-100p {
+  height:100%;
+}
+
+.img-box > img {
+  width:100%;
+}
+
+/* 커스텀 */
+.con {
+  margin-left:30px;
+  margin-right:30px;
+}
+
+html {
+  transition:background-color 1s, color 1s;
+}
+
+[data-section-mode="films"] {
+  background-color:black;
+  color:white;
+}
+
+.section-wrap > .con > .section {
+  width:30%;
+  transition:width 1s;
+}
+
+.section-wrap > .con > .section.active {
+  width:70%;
+}
+
+@media ( max-width:700px ) {
+  .section-wrap > .con > .section {
+    visibility:hidden;
+    width:0;
+  }
+  
+  .section-wrap > .con > .section.active {
+    width:100%;
+    visibility:visible;
+  }
+}
+
+.top-bar {
+  height:250px;
+}
+
+.top-bar > .con > .section > h1 {
+  transition:font-size 1s;
+}
+
+.top-bar > .con > .section.active > h1 {
+  font-size:3rem;
+}
+
+.lists-box > .con > .section > .masonry-grid > .grid-item {
+  width:33.3333%;
+}
+
+.lists-box > .con > .section > .masonry-grid > .grid-item .img-box {
+  padding:10px;
+}
+
+.lists-box > .con > .section > .masonry-grid > .grid-item .img-box > img {
+  width:calc(100% - 20px);
+}
+
+@media ( max-width:1000px ) {
+  .lists-box > .con > .section > .masonry-grid > .grid-item {
+    width:50%;
+  }
+}
+
+@media ( max-width:700px ) {
+  .lists-box > .con > .section > .masonry-grid > .grid-item {
+    width:100%;
+  }
+}
+```
+```javascript
+var $window = $(window);
+var $html = $('html');
+
+function PageLayout__init() {
+  $('.section-wrap > .con > .section').mouseenter(function() {
+    var $el = $(this);
+
+    var sectionName = $el.attr('data-section-name');
+    PageLayout__changeSectionMode(sectionName);
+  });
+
+  PageLayout__changeSectionMode('studio');
+
+  $('.masonry-grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 0
+  });
+
+  $window.resize(_.debounce(function() {
+    $('.masonry-grid').masonry('layout');
+  }, 500));
+}
+
+function PageLayout__changeSectionMode(modeName) {
+  $html.attr('data-section-mode', modeName);
+
+  $('.section-wrap > .con > .section.active').removeClass('active');
+  $('.section-wrap > .con > .section[data-section-name="' + modeName + '"]').addClass('active');
+
+  setTimeout(function() {
+    $('.masonry-grid').masonry('layout');
+  }, 1000);
+}
+
+$(function() {  
+  PageLayout__init();
+});
+```
