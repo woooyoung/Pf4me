@@ -707,6 +707,197 @@ $(function() {
 })
 ```
 
+### owl-carousel-form
+```html
+
+
+<!-- 제이쿼리 불러오기, 아울 캐러셀 보다 위에 있어야 합니다. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- 아울 캐러셀 불러오기, 제이쿼리 보다 밑에 있어야 합니다. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+
+<div class="slider-1">
+  <div class="owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+  </div>
+</div>
+```
+```css
+body, h1, h2, h3, h4 {
+  margin:0;
+}
+
+.slider-1 .item {
+  height:100px;
+  background-color:pink;
+}
+```
+```javascript
+function Slider1__init() {
+  $('.slider-1 .owl-carousel').owlCarousel({
+    loop:true,
+    margin:20,
+    nav:true,
+    stagePadding:200,
+    navText:['좌', '우'],
+    responsive:{
+      0:{
+        items:1
+      }
+    }
+  });
+}
+
+Slider1__init();
+```
+
+### owl-carousel-video
+```html
+<!-- 제이쿼리 불러오기, 아울 캐러셀 보다 위에 있어야 합니다. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- 아울 캐러셀 불러오기, 제이쿼리 보다 밑에 있어야 합니다. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+
+<div class="slider-1-outer-box">
+  <div class="con relative">
+    <div class="slider-1 absolute-top absolute-center">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <iframe src='https://www.youtube.com/embed/hQW_1y0awxE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'></iframe>
+        </div>
+        <div class="item">
+          <iframe src='https://www.youtube.com/embed/Op9OKbhaMD0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'></iframe>
+        </div>
+        <div class="item">
+          <iframe src='https://www.youtube.com/embed/Poj1qxvOoGs' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'></iframe>
+        </div>
+        <div class="item">
+          <iframe src='https://www.youtube.com/embed/jDSsOKcsNk8' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+
+-->
+```
+```css
+body, h1, h2, h3, h4 {
+  margin:0;
+}
+
+.overflow-hidden {
+  overflow:hidden;
+}
+
+.relative {
+  position:relative;
+}
+
+.absolute-top {
+  position:absolute;
+  top:0;
+}
+
+.absolute-center {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.con {
+  max-width:1080px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.slider-1 {
+  width:3280px;
+}
+
+.slider-1-outer-box > .con {
+  background-color:red;
+}
+
+.slider-1-outer-box > .con::after {
+  content:"";
+  display:block;
+  padding-top:56.25%;
+  background-color:blue;
+}
+
+.slider-1 .item::after {
+  content:"";
+  display:block;
+  padding-top:56.25%;
+  background-color:red;
+}
+
+.slider-1 .item > iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.slider-1 > .owl-carousel.owl-theme.owl-loaded > .owl-nav > * {
+  border-radius:0;
+  font-weight:bold;
+  font-size:2rem;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+}
+
+.slider-1 > .owl-carousel.owl-theme.owl-loaded > .owl-nav > :first-child {
+  left:calc(50% - 600px);
+}
+
+.slider-1 > .owl-carousel.owl-theme.owl-loaded > .owl-nav > :last-child {
+  left:calc(50% + 600px);
+}
+```
+```javascript
+function Slider1__init() {
+  $('.slider-1 .owl-carousel').owlCarousel({
+    loop:true,
+    margin:20,
+    nav:true,
+    dots:false,
+    navText:['좌', '우'],
+    responsive:{
+      0:{
+        items:3
+      }
+    }
+  });
+}
+
+Slider1__init();
+```
+
+
 ### showing text
 ```html
 <!-- 제이쿼리 불러오기 -->
@@ -3045,4 +3236,248 @@ lightbox.option({
 .checkbox-wrap > input:checked + span::after {
   display:block;
 }
+```
+
+### step-form-design
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="form-step-box" data-form-step-phase="1">
+  <div class="head">
+    <div class="progress-bar"></div>
+  </div>
+  <form class="body">
+    <div>
+      <ul>
+        <li>
+          <div class="checkbox-wrap">
+            <input type="checkbox" name="type1">
+            <span></span>
+          </div>
+          <span>공간전체1</span>
+        </li>
+        <li>
+          <div class="checkbox-wrap">
+            <input type="checkbox" name="type1">
+            <span></span>
+          </div>
+          <span>벽/천장1</span>
+        </li>
+      </ul>
+      <div>
+        <button type="button" class="btn-next">다음</button>
+      </div>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <div class="checkbox-wrap">
+            <input type="checkbox" name="type1">
+            <span></span>
+          </div>
+          <span>공간전체2</span>
+        </li>
+        <li>
+          <div class="checkbox-wrap">
+            <input type="checkbox" name="type1">
+            <span></span>
+          </div>
+          <span>벽/천장2</span>
+        </li>
+      </ul>
+      <div>
+        <button type="button" class="btn-prev">이전</button>
+        <button type="button" class="btn-next">다음</button>
+      </div>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <div class="checkbox-wrap">
+            <input type="checkbox" name="type1">
+            <span></span>
+          </div>
+          <span>공간전체3</span>
+        </li>
+        <li>
+          <div class="checkbox-wrap">
+            <input type="checkbox" name="type1">
+            <span></span>
+          </div>
+          <span>벽/천장3</span>
+        </li>
+      </ul>
+      <div>
+        <button type="button" class="btn-prev">이전</button>
+        <button type="button" class="btn-next">완료</button>
+      </div>
+    </div>
+    <div>
+      완료되었습니다.
+    </div>
+  </form>
+</div>
+```
+```css
+.checkbox-wrap {
+  display:inline-block;
+  padding:0px;
+  position:relative;
+  border:1px solid #afafaf;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.checkbox-wrap > input {
+  margin:0;
+  padding:0;
+  display:block;
+  width:30px;
+  height:30px;
+  opacity:0;
+  position:relative;
+  z-index:1;
+}
+.checkbox-wrap > input + span {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.checkbox-wrap > input + span::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight:900;
+  content:"\f00c";
+  color:white;
+  font-weight:bold;
+  font-size:1.2rem;
+  display:none;
+}
+
+.checkbox-wrap > input:checked + span {
+  background-color:#00c7ae;
+}
+
+.checkbox-wrap > input:checked + span::after {
+  display:block;
+}
+
+.radio-wrap {
+  display:inline-block;
+  position:relative;
+  border:1px solid #afafaf;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.radio-wrap > input {
+  margin:0;
+  padding:0;
+  display:block;
+  width:30px;
+  height:30px;
+  opacity:0;
+  position:relative;
+  z-index:1;
+}
+
+.radio-wrap > input + span {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.radio-wrap > input + span::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight:900;
+  content:"\f00c";
+  color:white;
+  font-weight:bold;
+  font-size:1.2rem;
+  display:none;
+}
+
+.radio-wrap > input:checked + span {
+  background-color:#00c7ae;
+}
+
+.radio-wrap > input:checked + span::after {
+  display:block;
+}
+
+.form-step-box > .head > .progress-bar::after {
+  content:"";
+  display:block;
+  height:10px;
+  width:0;
+  background-color:red;
+  transition:width 1s;
+}
+
+.form-step-box > .body > div {
+  display:none;
+}
+
+.form-step-box[data-form-step-phase="1"] > .body > div:nth-child(1) {
+  display:block;
+}
+
+.form-step-box[data-form-step-phase="1"] > .head > .progress-bar::after {
+  width:calc(100% / 3 * (1 - 1));
+}
+
+.form-step-box[data-form-step-phase="2"] > .body > div:nth-child(2) {
+  display:block;
+}
+
+.form-step-box[data-form-step-phase="2"] > .head > .progress-bar::after {
+  width:calc(100% / 3 * (2 - 1));
+}
+
+.form-step-box[data-form-step-phase="3"] > .body > div:nth-child(3) {
+  display:block;
+}
+
+.form-step-box[data-form-step-phase="3"] > .head > .progress-bar::after {
+  width:calc(100% / 3 * (3 - 1));
+}
+
+.form-step-box[data-form-step-phase="4"] > .body > div:nth-child(4) {
+  display:block;
+}
+
+.form-step-box[data-form-step-phase="4"] > .head > .progress-bar::after {
+  width:calc(100% / 3 * (4 - 1));
+}
+```
+```javascript
+function FormStepBox__init() {
+  $('.form-step-box > .body .btn-next').click(function() {
+    var $box = $(this).closest('.form-step-box');
+    var phase = $box.attr('data-form-step-phase');
+    var newPhase = parseInt(phase) + 1;
+    $box.attr('data-form-step-phase', newPhase);
+  });
+  
+  $('.form-step-box > .body .btn-prev').click(function() {
+    var $box = $(this).closest('.form-step-box');
+    var phase = $box.attr('data-form-step-phase');
+    var newPhase = parseInt(phase) - 1;
+    $box.attr('data-form-step-phase', newPhase);
+  });
+}
+
+FormStepBox__init();
 ```
